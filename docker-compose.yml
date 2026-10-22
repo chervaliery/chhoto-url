@@ -1,0 +1,13 @@
+services:
+  chhoto-url:
+    image: ghcr.io/sintan1729/chhoto-url:7.5
+    container_name: chhoto-url
+    restart: unless-stopped
+    # Bind to localhost only: Apache is the only thing that should reach it.
+    ports:
+      - "127.0.0.1:4567:4567"
+    # Mount a whole directory (not a single file): required for WAL mode.
+    # Chhoto also writes its automatic backups to <dir>/backups/ here.
+    volumes:
+      - ./data:/data
+    env_file: .env

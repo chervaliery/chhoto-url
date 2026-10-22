@@ -1,0 +1,9 @@
+# Secrets: password + API key live here, keep .env.example only
+.env
+
+# Runtime data: SQLite DB, WAL files, Chhoto's automatic backups
+data/
+
+# Editor / OS noise
+*.swp
+.DS_Store
